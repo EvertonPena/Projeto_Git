@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema de reserva</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style_css_JQuery.css">
+</head>
+<body>
+	<h1>Sistema de reserva de passagens</h1>
+
+	<div class="linha">	<!--bloco da linha -->
+		<div class="coluna-4"> <!--bloco da primeira coluna-->
+			<img src="onibus1.png">
+			<p id="nome_produto">Reserva de passagem TomBus</p>
+			<span id="valores">R$ 75,00</span>
+			<button id="botao">Reservar</button>
+		</div>
+		
+		<div class="coluna-4"> <!--bloco da primeira coluna-->
+			<img src="onibus2.png">
+			<p id="nome_produto">Reserva de passagem SolBus</p>
+			<span id="valores">R$ 85,00</span>
+			<button id="botao">Reservar</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").hover(function(){
+			$(this).css("background-color", "green");
+			});
+		});
+
+		$(document).ready(function(){
+			$("#botao").on({
+				mouseleave: function(){
+					var valor = document.getElementById('valores').innerHTML='R$ 100,00';
+				},
+				click: function(){
+					var botao = document.getElementById('botao').innerHTML='Reservado!';
+					$(this).css("background-color", "red");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
